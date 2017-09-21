@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_beranda"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Beranda" />
+        <item
+            android:id="@+id/nav_ja"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Join Antrian" />
+        <item
+            android:id="@+id/nav_gm"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Gabung Mitra" />
+        <item
+            android:id="@+id/nav_tu"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Top Up" />
+        <item
+            android:id="@+id/nav_notif"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Log Out" />
+    </group>
+</menu>

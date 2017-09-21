@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "235199277842",
+    "firebase_url": "https://antribos-86757.firebaseio.com",
+    "project_id": "antribos-86757",
+    "storage_bucket": "antribos-86757.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235199277842:android:a72caaadf5d0b714",
+        "android_client_info": {
+          "package_name": "com.kleinkarasu.antribos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235199277842-8p8mtoem8vcb5lpmo75jkv6mls4cc3bu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kleinkarasu.antribos",
+            "certificate_hash": "3a829babd085569ede87c2a3d87239c57b2c7892"
+          }
+        },
+        {
+          "client_id": "235199277842-mk3fqsh0f46npqqquksnm3eqkffb7fgj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvR4EMA3CT4r3SIA-VeTd_ZPBG9XY_mUE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235199277842-mk3fqsh0f46npqqquksnm3eqkffb7fgj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
