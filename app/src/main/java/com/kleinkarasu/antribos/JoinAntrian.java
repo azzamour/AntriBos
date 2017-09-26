@@ -1,5 +1,6 @@
 package com.kleinkarasu.antribos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,5 +24,7 @@ public class JoinAntrian extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         getActivity().setTitle("Join Antrian");
+
+        startActivity(new Intent(getContext(), InfoAntrian.class));
     }
 }
