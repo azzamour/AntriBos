@@ -1,5 +1,6 @@
 package com.kleinkarasu.antribos;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +13,9 @@ import java.util.List;
  * Created by Muhammad Azzam on 21/09/2017.
  */
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class InfoAntrianAdapter extends RecyclerView.Adapter<InfoAntrianAdapter.ViewHolder> {
     private List<Loket> lokets;
+    private Context context;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -47,16 +49,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Loket> lokets) {
+    public InfoAntrianAdapter(Context context, List<Loket> lokets) {
         this.lokets = lokets;
+        this.context = context;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public InfoAntrianAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
         // create a new view
-        View v = (View) LayoutInflater.from(parent.getContext())
+        View v = LayoutInflater.from(context)
                 .inflate(R.layout.card_layout, parent, false);
         // set the view's size, margins, paddings and layout parameters
 
@@ -69,8 +72,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.antrianSaatIni.setText(lokets.get(position).getAntrianSaatIni());
-        holder.antrianTersedia.setText(lokets.get(position).getNomorAntrianTersedia());
+        holder.antrianSaatIni.setText("0");
+        holder.antrianTersedia.setText("1");
     }
 
     // Return the size of your dataset (invoked by the layout manager)

@@ -33,6 +33,14 @@ public class InfoAntrian extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
+        mRecyclerView.setHasFixedSize(true);
+
+        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mAdapter = new InfoAntrianAdapter(this, lokets);
+        mRecyclerView.setAdapter(mAdapter);
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("mitra").child("barbershop").child("doktercukur").addValueEventListener(new ValueEventListener() {
             @Override
@@ -44,6 +52,7 @@ public class InfoAntrian extends AppCompatActivity {
                     lokets.add(loket);
                     Log.d("antrian saat ini",Integer.toString(loket.getAntrianSaatIni()));
                 }
+                mAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -51,17 +60,5 @@ public class InfoAntrian extends AppCompatActivity {
 
             }
         });
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(lokets);
-        mRecyclerView.setAdapter(mAdapter);
     }
 }
