@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,71 +15,75 @@ import java.util.List;
  */
 
 public class InfoAntrianAdapter extends RecyclerView.Adapter<InfoAntrianAdapter.ViewHolder> {
-    private List<Loket> lokets;
-    private Context context;
+    private ArrayList<Loket> lokets;
+    private LayoutInflater inflater;
+    private final LoketAdapterOnClickHandler onClickListener;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case
+        private TextView loketName;
         private TextView antrianSaatIni;
-        private TextView antrianTersedia;
+        private TextView next;
+        private TextView antrianSisa;
 
         public ViewHolder(View v) {
             super(v);
-            antrianSaatIni = (TextView) v.findViewById(R.id.tv_saat_ini);
-            antrianTersedia = (TextView) v.findViewById(R.id.tv_tersedia);
+            loketName = (TextView) itemView.findViewById(R.id.tv_loket_name);
+            antrianSaatIni = (TextView) v.findViewById(R.id.antrian_saat_ini);
+            next = (TextView) v.findViewById(R.id.tv_next);
+            antrianSisa = (TextView) itemView.findViewById(R.id.tv_loket_sisa);
+
+            itemView.setOnClickListener(this);
         }
 
-        public TextView getAntrianSaatIni() {
-            return antrianSaatIni;
-        }
+        @Override
+        public void onClick(View view) {
+            int postiton = getAdapterPosition();
+            Loket loket = lokets.get(postiton);
 
-        public void setAntrianSaatIni(TextView antrianSaatIni) {
-            this.antrianSaatIni = antrianSaatIni;
-        }
-
-        public TextView getAntrianTersedia() {
-            return antrianTersedia;
-        }
-
-        public void setAntrianTersedia(TextView antrianTersedia) {
-            this.antrianTersedia = antrianTersedia;
+            onClickListener.onClick(loket);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public InfoAntrianAdapter(Context context, List<Loket> lokets) {
+    public InfoAntrianAdapter(Context context, ArrayList<Loket> lokets, LoketAdapterOnClickHandler onClickListener) {
         this.lokets = lokets;
-        this.context = context;
+        this.inflater = LayoutInflater.from(context);
+        this.onClickListener = onClickListener;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
     public InfoAntrianAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
-        // create a new view
-        View v = LayoutInflater.from(context)
-                .inflate(R.layout.card_layout, parent, false);
-        // set the view's size, margins, paddings and layout parameters
-
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        View view = inflater.inflate(R.layout.card_info_antrian, parent, false);
+        return new InfoAntrianAdapter.ViewHolder(view);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        holder.antrianSaatIni.setText("0");
-        holder.antrianTersedia.setText("1");
+        Loket loket = lokets.get(position);
+        holder.loketName.setText(loket.getNama());
+        holder.antrianSaatIni.setText(loket.nowString());
+        holder.next.setText(loket.nextString());
+        holder.antrianSisa.setText("SISA ANTRIAN " + loket.getSisa());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return lokets.size();
+        if (lokets != null) {
+            return lokets.size();
+        }
+
+        return 0;
+    }
+
+    public interface LoketAdapterOnClickHandler {
+        void onClick(Loket loket);
     }
 }

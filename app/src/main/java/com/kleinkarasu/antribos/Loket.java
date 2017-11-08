@@ -1,43 +1,98 @@
 package com.kleinkarasu.antribos;
 
+import java.io.Serializable;
+
 /**
  * Created by Muhammad Azzam on 27/09/2017.
  */
 
-public class Loket {
-    private int antrianSaatIni;
-    private int nomorAntrianTersedia;
-    private String status;
+public class Loket implements Serializable {
+    private String nama;
+    private Long next;
+    private Long sisa;
+    private Long now;
+    private Long tersedia;
+    private String identifier;
 
-    public Loket() {}
-
-    public Loket(int antrianSaatIni, int nomorAntrianTersedia, String status) {
-        this.antrianSaatIni = antrianSaatIni;
-        this.nomorAntrianTersedia = nomorAntrianTersedia;
-        this.status = status;
+    public Loket(String nama, Long next, Long sisa, Long now, Long tersedia, String identifier) {
+        this.nama = nama;
+        this.next = next;
+        this.sisa = sisa;
+        this.now = now;
+        this.tersedia = tersedia;
+        this.identifier = identifier;
     }
 
-    public int getAntrianSaatIni() {
-        return antrianSaatIni;
+    public String getNama() {
+        return nama;
     }
 
-    public void setAntrianSaatIni(int antrianSaatIni) {
-        this.antrianSaatIni = antrianSaatIni;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
-    public int getNomorAntrianTersedia() {
-        return nomorAntrianTersedia;
+    public Long getNext() {
+        return next;
     }
 
-    public void setNomorAntrianTersedia(int nomorAntrianTersedia) {
-        this.nomorAntrianTersedia = nomorAntrianTersedia;
+    public void setNext(Long next) {
+        this.next = next;
     }
 
-    public String getStatus() {
-        return status;
+    public Long getSisa() {
+        if (tersedia != null && next != null) {
+            if ((tersedia - next) < 0) {
+                return 0L;
+            }
+            return tersedia - next;
+        }
+        return 0L;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setSisa(Long sisa) {
+        this.sisa = sisa;
+    }
+
+    public Loket() {
+    }
+
+    public Long getNow() {
+        return now;
+    }
+
+    public void setNow(Long now) {
+        this.now = now;
+    }
+
+    public Long getTersedia() {
+        return tersedia;
+    }
+
+    public void setTersedia(Long tersedia) {
+        this.tersedia = tersedia;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public String nowString() {
+        if (getNow() == 0) {
+            return "-";
+        } else {
+            return IdGenerator.generate(getIdentifier(), getNow());
+        }
+    }
+
+    public String nextString() {
+        if (getSisa() == 0) {
+            return "-";
+        } else {
+            return IdGenerator.generate(getIdentifier(), getNext());
+        }
+    }
+
+    public String tersediaString() {
+        return IdGenerator.generate(getIdentifier(), getTersedia());
     }
 }

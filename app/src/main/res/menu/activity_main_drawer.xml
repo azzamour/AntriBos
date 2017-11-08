@@ -4,31 +4,31 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_beranda"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_home"
             android:title="Beranda" />
         <item
             android:id="@+id/nav_ja"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_menu_join"
             android:title="Join Antrian" />
         <item
             android:id="@+id/nav_gm"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_mitra"
             android:title="Gabung Mitra" />
         <item
             android:id="@+id/nav_tu"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_topup"
             android:title="Top Up" />
         <item
             android:id="@+id/nav_notif"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_menu_notif"
             android:title="Notifications" />
         <item
             android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/ic_menu_settings"
             android:title="Settings" />
         <item
             android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/ic_menu_logout"
             android:title="Log Out" />
     </group>
 </menu>

@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity
     private TextView tvUserEmail;
 
     private FirebaseAuth firebaseAuth;
+    public NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +49,20 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         //ganti email di header sesuai login
         View hView =  navigationView.getHeaderView(0);
         TextView tvUserEmail = (TextView)hView.findViewById(R.id.tv_useremail);
         tvUserEmail.setText(user.getEmail());
+
+        //default masuk beranda
+        Fragment fragment = new Beranda();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.content_main, fragment);
+        ft.commit();
+        navigationView.getMenu().getItem(0).setChecked(true);
     }
 
     @Override
@@ -100,12 +108,16 @@ public class MainActivity extends AppCompatActivity
                 fragment = new JoinAntrian();
                 break;
             case R.id.nav_gm:
+                fragment = new GabungMitra();
                 break;
             case R.id.nav_tu:
+                fragment = new TopUp();
                 break;
             case R.id.nav_notif:
+                fragment = new Notifications();
                 break;
             case R.id.nav_settings:
+                fragment = new Settings();
                 break;
             case R.id.nav_logout:
                 firebaseAuth.signOut();
@@ -132,4 +144,5 @@ public class MainActivity extends AppCompatActivity
         displaySelectedScreen(id);
         return true;
     }
+
 }
