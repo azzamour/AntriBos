@@ -25,8 +25,9 @@
             android:textStyle="bold" />
 
         <View
+            android:layout_marginTop="8dp"
             android:layout_width="32dp"
-            android:layout_height="6dp"
+            android:layout_height="4dp"
             android:background="@drawable/rectangle_orange" />
 
         <android.support.v7.widget.RecyclerView
@@ -46,8 +47,9 @@
             android:textStyle="bold" />
 
         <View
-            android:layout_width="32dp"
-            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="48dp"
+            android:layout_height="4dp"
             android:background="@drawable/rectangle_orange" />
 
         <LinearLayout
@@ -56,227 +58,192 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:orientation="horizontal">
 
-            <RelativeLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="#ffffff"
-                android:padding="8dp">
+                android:elevation="2dp">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-
-                    <View
-                        android:id="@+id/circle_barber"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/circle" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:gravity="center">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/barbershop_dark" />
+                        android:src="@drawable/barbershop_light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="Barbershop"
+                        android:textColor="@android:color/black" />
                 </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="Barbershop"
-                    android:textColor="@android:color/black" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_clinic"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="#ffffff"
-                android:padding="8dp">
+                android:elevation="2dp">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-
-                    <View
-                        android:id="@+id/circle_clinic"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/circle_green" />
+                    android:id="@+id/rl_clinic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="8dp">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/clinic_light" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="Clinic"
+                        android:textColor="@android:color/black" />
                 </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="Clinic"
-                    android:textColor="@android:color/black" />
-            </RelativeLayout>
-
-            <RelativeLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="#ffffff"
-                android:padding="8dp">
+                android:elevation="2dp">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-
-                    <View
-                        android:id="@+id/circle_resto"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/circle" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:gravity="center">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/restaurant_dark" />
-                </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="Restaurant"
-                    android:textColor="@android:color/black" />
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="Restaurant"
+                        android:textColor="@android:color/black" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="116dp"
             android:orientation="horizontal">
 
-            <RelativeLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="#ffffff"
-                android:padding="8dp">
+                android:elevation="2dp">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-
-                    <View
-                        android:id="@+id/circle_gov"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/circle" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:gravity="center">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/government_dark" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="Government"
+                        android:textColor="@android:color/black" />
                 </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="Government"
-                    android:textColor="@android:color/black" />
-            </RelativeLayout>
-
-            <RelativeLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="#ffffff"
-                android:padding="8dp">
+                android:elevation="2dp">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-
-                    <View
-                        android:id="@+id/circle_repair"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/circle" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:gravity="center">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/repairshop_dark" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="Repair Shop"
+                        android:textColor="@android:color/black" />
                 </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="Repair Shop"
-                    android:textColor="@android:color/black" />
-            </RelativeLayout>
-
-            <RelativeLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="#ffffff"
-                android:padding="8dp">
+                android:elevation="2dp">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-
-                    <View
-                        android:id="@+id/circle_bank"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/circle" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:gravity="center">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/bank_dark" />
-                </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="Bank"
-                    android:textColor="@android:color/black" />
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="Bank"
+                        android:textColor="@android:color/black" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

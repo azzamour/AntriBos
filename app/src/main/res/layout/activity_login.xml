@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:padding="16dp"
-    tools:context="com.kleinkarasu.antribos.LoginActivity">
+    tools:context="com.antribos.user.LoginActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -61,6 +61,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Not have an account? Sign up here"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/tv_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not yet verified? Send email verification"
             android:textAlignment="center"
             android:textColor="@color/colorWhite" />
     </LinearLayout>

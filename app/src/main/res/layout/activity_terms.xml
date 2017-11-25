@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="com.antribos.user.Terms"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Booking Confirmation"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="70dp"
+        android:layout_height="4dp"
+        android:background="@drawable/rectangle_orange" />
+
+    <com.codesgood.views.JustifiedTextView
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/terms"/>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Terms and Conditions"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/not_rounded_white"
+            android:text="CANCEL"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:padding="8dp"/>
+        <Button
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_agree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/not_rounded"
+            android:text="YES, I AGREE"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:padding="8dp"/>
+    </LinearLayout>
+</LinearLayout>

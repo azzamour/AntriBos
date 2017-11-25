@@ -5,4 +5,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="verify_email">Kami butuh memverifikasi bahwa anda memiliki akses terhadap email yang anda daftarkan pada AntriBos. Masukkan alamat email &amp; password yang teregistrasi, dan kami akan mengirimkan anda email verifikasi.</string>
+    <string name="terms">Hallo Bos!\nSaat kamu melakukan booking antrian ini, berarti kamu sudah setuju dengan kompensasi atas ketidakhadiranmu ketika telah mendapatkan nomor antrian, sesuai dengan ketentuan yang ada pada Terms and Conditions.</string>
 </resources>
